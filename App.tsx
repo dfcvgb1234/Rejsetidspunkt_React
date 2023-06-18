@@ -1,12 +1,22 @@
 import {View, Text, StyleSheet} from "react-native"
 import Home from "./screens/Home"
+import Profile from "./screens/Profile"
 
-const App = () => {
+
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.mainContainer}>
-      <Home/>
-    </View>
-    
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Profile" component={Profile} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
